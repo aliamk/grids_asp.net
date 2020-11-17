@@ -32,7 +32,7 @@ namespace Grids.Controllers
         }
 
         // GET api/<FundsController>/5
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "Get")]
         public Fund Get(int id)
         {
             return _fundService.GetById(id);

@@ -14,7 +14,9 @@ namespace Grids.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int FundStructureId { get; set; } = 0;
+        
         public string FundName { get; set; } = "";
+        
         public string LaunchDate { get; set; } = "";
     }
 }
