@@ -9,10 +9,12 @@ namespace Grids.Context
 {
     public class DatabaseContext : DbContext
     {
+        internal object FundName;
+
         public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)
         {
 
         }
-        public DbSet<Fund> Students { get; set; }       // set DbSet to the Model file name
+        public DbSet<Fund> Funds { get; set; }       // set DbSet to the Model file name
     }
 }

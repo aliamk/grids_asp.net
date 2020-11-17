@@ -9,6 +9,8 @@ namespace Grids.Models
 {
     public class Fund
     {
+        internal readonly int FundId;
+
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int FundStructureId { get; set; } = 0;
