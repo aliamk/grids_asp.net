@@ -2,11 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Grids.Context;
 using Grids.IService;
 using Grids.Service;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -26,6 +28,8 @@ namespace Grids
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            // ADDED 
+            services.AddDbContext<DatabaseContext>(o => o.UseSqlServer(Configuration.GetConnectionString("")));
             services.AddScoped<IFundService, FundService>();
             services.AddControllersWithViews()
                 .AddJsonOptions(o =>
