@@ -29,7 +29,7 @@ namespace Grids
         {
             services.AddControllersWithViews();
             // ADDED 
-            services.AddDbContext<DatabaseContext>(o => o.UseSqlServer(Configuration.GetConnectionString("")));
+            services.AddDbContext<DatabaseContext>(o => o.UseSqlServer(Configuration.GetConnectionString("Funds")));
             services.AddScoped<IFundService, FundService>();
             services.AddControllersWithViews()
                 .AddJsonOptions(o =>
